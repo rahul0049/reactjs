@@ -121,7 +121,7 @@ const App = () => {
       {jobOpenings.map(function (elem, idx) {
         return <div key={idx}>
           <Card company={elem.companyName} datePosted={elem.datePosted} post={elem.post} tag1={elem.tag1} brandLogo={elem.brandLogo} pay={elem.pay} tag2={elem.tag2} />
-        </div>
+        </div> //idx is used so that react will identify each element as unique
       })}
     </div>
   )

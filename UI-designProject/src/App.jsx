@@ -1,6 +1,6 @@
 import React from 'react'
-import Section1 from './components/Section1/section1.jsx'
-import Section2 from './components/Section2/section2.jsx'
+import Section1 from './components/Section1/Section1.jsx'
+
 const App = () => {
   const users = [
     {
