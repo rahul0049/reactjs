@@ -12,16 +12,13 @@ const submitHandler=(e)=>{
     let copyTask=[...task];
     copyTask.push({title,details})
     setTask(copyTask)
-    console.log(copyTask)
-
-    
     settitle('')
     setDetails('')
   }
 
   const deletNote=(idx)=>{
     const copyTask = [...task];
-    copyTask.splice(idx,1)
+    copyTask.splice(idx,1) // remove 1 item at specified idx
     setTask(copyTask)
 
   }
@@ -33,7 +30,7 @@ const submitHandler=(e)=>{
       
       <form onSubmit={(e)=>{
         submitHandler(e);
-      }} className='flex gap-4 lg:w-1/2 items-start flex-col  p-10'>
+      }} className='flex gap-4 lg:w-1/2 items-start flex-col  p-10 '>
 
         <h1 className='text-3xl font-bold'>Add Notes</h1>
 
@@ -58,7 +55,7 @@ const submitHandler=(e)=>{
         
 
         />
-        <button className='bg-white active:bg-gray-400 font-medium  text-black outline-none px-5 py-2 rounded'>Add notes</button>
+        <button className='bg-white active:bg-gray-400 font-medium  text-black outline-none px-5 py-2 rounded cursor-pointer'>Add notes</button>
         
         <img className='rotate-y-180 h-52' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYOzI_N2YdpcXSko0lQi83GpXTIrlP4UQpkg&s" alt="" />
       </form>
@@ -72,7 +69,7 @@ const submitHandler=(e)=>{
               <h3 className='leading-tight text-xl font-bold'>{elem.title}</h3>
               <p className='mt-2 leading-tight font-medium text-gray-700'>{elem.details}</p>
             </div>
-            <button onClick={()=>{
+            <button  onClick={()=>{
               deletNote(idx)
             }} className='w-full cursor-pointer active:scale-95 bg-red-400 text-white py-1 text-xs rounded-2xl font-bold'>Delete</button>
             </div>
